@@ -69,12 +69,12 @@
         z-index: 1;
         opacity: 1;
         background-image:
-          linear-gradient(125deg, rgba(17,21,34,.68) 0 43%, rgba(17,21,34,.42) 59%, rgba(237,61,136,.27) 100%),
+          linear-gradient(125deg, rgba(17,21,34,.46) 0 43%, rgba(17,21,34,.19) 59%, rgba(237,61,136,.18) 100%),
           repeating-linear-gradient(135deg, transparent 0 22px, rgba(255,255,255,.10) 22px 24px, transparent 24px 46px);
         pointer-events: none;
       }
       .hero-video { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; background: #111522; }
-      .hero-video iframe { position: absolute; top: 50%; left: 50%; width: 100%; height: 100%; min-width: 100%; min-height: 100%; border: 0; transform: translate(-50%, -50%); }
+      .hero-video iframe { position: absolute; top: 50%; left: 50%; width: 177.77777778vh; height: 56.25vw; min-width: 100%; min-height: 100%; border: 0; transform: translate(-50%, -50%); }
       .hero::after {
         content: "";
         position: absolute;
@@ -106,7 +106,7 @@
       .main-nav { display: flex; grid-column: 4; gap: 36px; align-items: center; font-size: .9rem; }
       .main-nav a { transition: color .2s ease; }
       .main-nav a:hover { color: var(--yellow); }
-      .hero-grid { display: grid; grid-template-columns: 540px minmax(0, 1fr); gap: 50px; align-items: center; min-height: calc(100vh - 142px); }
+      .hero-grid { display: grid; grid-template-columns: 500px minmax(0, 1fr); gap: 75px; align-items: center; min-height: calc(100vh - 142px); }
       .hero-copy { position: relative; z-index: 3; color: white; padding: 0; transform: translateY(-24px); }
       .eyebrow { display: inline-flex; align-items: center; gap: 8px; color: var(--yellow); font-size: .74rem; }
       .eyebrow::before { content: "✦"; font-size: 1rem; }
@@ -121,8 +121,9 @@
       .button-primary { background: var(--yellow); color: var(--ink); }
       .button-secondary { border-color: rgba(255,255,255,.82); color: white; box-shadow: 4px 4px 0 rgba(255,255,255,.88); }
       .button-secondary:hover { box-shadow: 2px 2px 0 rgba(255,255,255,.88); }
-      .hero-visual { position: relative; height: 720px; align-self: center; }
-      .photo-frame { position: absolute; right: -6px; bottom: -34px; width: min(100%, 900px); height: 680px; overflow: hidden; border: 10px solid var(--ink); border-radius: 56% 44% 48% 52% / 40% 48% 52% 60%; box-shadow: 17px 17px 0 var(--yellow); transform: rotate(3deg); background: #f6b5a4; }
+      .hero-visual { position: relative; height: 730px; align-self: center; overflow: visible; }
+      .hero-visual::before { content: ""; position: absolute; z-index: 0; top: -62px; left: -78px; width: 1070px; height: 810px; opacity: .9; background-image: radial-gradient(circle, rgba(48,93,196,.76) 0 3px, transparent 3.8px), radial-gradient(circle, rgba(239,61,140,.74) 0 3px, transparent 3.8px); background-position: 0 0, 8px 8px; background-size: 17px 17px; -webkit-mask-image: radial-gradient(ellipse at 53% 50%, #000 0 48%, transparent 74%); mask-image: radial-gradient(ellipse at 53% 50%, #000 0 48%, transparent 74%); }
+      .photo-frame { position: absolute; z-index: 1; left: 20px; top: 12px; width: 870px; height: 700px; overflow: hidden; border: 10px solid var(--ink); border-radius: 56% 44% 48% 52% / 40% 48% 52% 60%; box-shadow: 17px 17px 0 var(--yellow); transform: rotate(3deg); background: #f6b5a4; }
       .photo-frame img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; display: block; }
       .sticker { position: absolute; z-index: 2; display: grid; place-items: center; border: 3px solid var(--ink); border-radius: 50%; background: var(--blue); color: var(--ink); width: 188px; height: 188px; font-family: var(--display-font); font-weight: 400; font-size: 1.45rem; line-height: .95; text-align: center; text-transform: uppercase; transform: rotate(-13deg); box-shadow: 5px 5px 0 var(--ink); }
       .sticker b { font-size: 3.5rem; line-height: .55; display: block; }
@@ -209,7 +210,8 @@
         .hero-title-image { width: min(520px, 100%); margin-bottom: 28px; }
         .hero .button { min-height: 50px; padding-inline: 22px; font-size: .86rem; }
         .hero-visual { height: 390px; width: calc(100% + 28px); margin-left: -14px; }
-        .photo-frame { width: 94%; height: 355px; right: 3%; bottom: 5px; border-width: 6px; box-shadow: 8px 8px 0 var(--yellow); }
+        .hero-visual::before { top: -12px; left: -40px; width: calc(100% + 80px); height: 410px; background-size: 12px 12px; }
+        .photo-frame { left: auto; top: auto; width: 94%; height: 355px; right: 3%; bottom: 5px; border-width: 6px; box-shadow: 8px 8px 0 var(--yellow); }
         .sticker { width: 102px; height: 102px; font-size: .85rem; border-width: 2px; }
         .sticker b { font-size: 2.2rem; }
         .sticker-one { top: 0; left: 4%; }
@@ -255,7 +257,7 @@
       </div>
       <div class="shell">
         <header>
-          <a class="brand-logo-link" href="#top" aria-label="Хоть Кого — наверх"><img class="brand-logo" src="assets/header-logo-reference-v3.png" alt="Ансамбль «Хоть Кого»" /></a>
+          <a class="brand-logo-link" href="#top" aria-label="Хоть Кого — наверх"><img class="brand-logo" src="assets/header-logo-transparent-v4.png" alt="Ансамбль «Хоть Кого»" /></a>
           <a class="header-phone" href="tel:+79254416722" aria-label="Позвонить: +7 925 44 167 22"><img src="assets/header-phone-reference-v3.png" alt="+7 925 44 167 22" /></a>
           <nav class="main-nav" aria-label="Разделы сайта">
             <a class="nav-link" href="#crew">Команда</a>
