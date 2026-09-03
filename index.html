@@ -69,7 +69,7 @@
         z-index: 1;
         opacity: 1;
         background-image:
-          linear-gradient(125deg, rgba(17,21,34,.92) 0 43%, rgba(17,21,34,.61) 59%, rgba(237,61,136,.43) 100%),
+          linear-gradient(125deg, rgba(17,21,34,.68) 0 43%, rgba(17,21,34,.42) 59%, rgba(237,61,136,.27) 100%),
           repeating-linear-gradient(135deg, transparent 0 22px, rgba(255,255,255,.10) 22px 24px, transparent 24px 46px);
         pointer-events: none;
       }
@@ -88,31 +88,31 @@
         background: var(--mint);
         border-radius: 50%;
       }
-      .hero > .shell { position: relative; z-index: 2; }
+      .hero > .shell { position: relative; z-index: 2; width: min(1400px, calc(100% - 80px)); }
       header {
-        width: calc(100% + 140px);
-        margin-left: -36px;
-        height: 158px;
+        width: calc(100% + 18px);
+        margin-left: 18px;
+        height: 142px;
         display: grid;
-        grid-template-columns: auto minmax(0, 1fr) auto auto;
-        column-gap: 78px;
+        grid-template-columns: 300px minmax(0, 1fr) 286px 320px;
+        column-gap: 66px;
         align-items: center;
         color: white;
       }
       .brand-logo-link { display: inline-flex; align-items: center; }
-      .brand-logo { display: block; width: min(270px, 32vw); height: auto; }
-      .header-phone { display: block; min-width: 440px; width: 440px; padding: 0; }
+      .brand-logo { display: block; width: 300px; height: auto; }
+      .header-phone { display: block; min-width: 286px; width: 286px; padding: 0; }
       .header-phone img { display: block; width: 100%; height: auto; }
-      .main-nav { display: flex; gap: 40px; align-items: center; font-size: 1rem; }
+      .main-nav { display: flex; gap: 36px; align-items: center; font-size: .9rem; }
       .main-nav a { transition: color .2s ease; }
       .main-nav a:hover { color: var(--yellow); }
-      .hero-grid { display: grid; grid-template-columns: 760px minmax(0, 1fr); gap: 45px; align-items: center; min-height: calc(100vh - 158px); }
+      .hero-grid { display: grid; grid-template-columns: 540px minmax(0, 1fr); gap: 50px; align-items: center; min-height: calc(100vh - 142px); }
       .hero-copy { position: relative; z-index: 3; color: white; padding: 0; transform: translateY(-24px); }
       .eyebrow { display: inline-flex; align-items: center; gap: 8px; color: var(--yellow); font-size: .74rem; }
       .eyebrow::before { content: "✦"; font-size: 1rem; }
       .image-heading { margin: 0; }
       .title-image { display: block; height: auto; max-width: 100%; }
-      .hero-title-image { width: clamp(460px, 42vw, 680px); margin: 0 0 28px; filter: drop-shadow(6px 7px 0 rgba(0,0,0,.46)); transform: rotate(-2deg); }
+      .hero-title-image { width: min(540px, 100%); margin: 0 0 28px; filter: drop-shadow(0 0 6px #060810) drop-shadow(11px 12px 0 #060810); transform: none; }
       .hero-lead { max-width: 630px; margin: 0; font-weight: 700; font-size: clamp(1.2rem, 1.45vw, 1.75rem); line-height: 1.45; }
       .hero-actions { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 36px; }
       .button { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 0 22px; border: 2px solid var(--ink); border-radius: 8px; font-family: "HK Text", Arial, sans-serif; font-weight: 900; text-transform: uppercase; font-size: .86rem; letter-spacing: .04em; box-shadow: 4px 4px 0 var(--ink); transition: transform .18s ease, box-shadow .18s ease; }
@@ -192,7 +192,7 @@
       .footer-vk { color: var(--yellow); font-weight: 900; text-decoration: underline; text-underline-offset: 3px; }
 
       @media (max-width: 800px) {
-        .shell, .intro .shell, .booking .shell, .crew > .shell { width: min(100% - 28px, 620px); }
+        .shell, .hero > .shell, .intro .shell, .booking .shell, .crew > .shell { width: min(100% - 28px, 620px); }
         header { width: auto; min-height: 150px; height: auto; margin-left: 0; display: grid; grid-template-columns: 1fr auto; grid-template-areas: "logo nav" "phone phone"; row-gap: 12px; }
         .brand-logo-link { grid-area: logo; }
         .main-nav { grid-area: nav; }
@@ -255,8 +255,8 @@
       </div>
       <div class="shell">
         <header>
-          <a class="brand-logo-link" href="#top" aria-label="Хоть Кого — наверх"><img class="brand-logo" src="assets/logo-hk-04.png" alt="Ансамбль «Хоть Кого»" /></a>
-          <a class="header-phone" href="tel:+79254416722" aria-label="Позвонить: +7 925 44 167 22"><img src="assets/header-phone-reference.png" alt="+7 925 44 167 22" /></a>
+          <a class="brand-logo-link" href="#top" aria-label="Хоть Кого — наверх"><img class="brand-logo" src="assets/header-logo-reference-v3.png" alt="Ансамбль «Хоть Кого»" /></a>
+          <a class="header-phone" href="tel:+79254416722" aria-label="Позвонить: +7 925 44 167 22"><img src="assets/header-phone-reference-v3.png" alt="+7 925 44 167 22" /></a>
           <nav class="main-nav" aria-label="Разделы сайта">
             <a class="nav-link" href="#crew">Команда</a>
             <a class="nav-link" href="#listen">Музыка</a>
@@ -265,7 +265,7 @@
         </header>
         <div class="hero-grid">
           <div class="hero-copy">
-            <h1 class="image-heading"><img class="title-image hero-title-image" src="assets/title-hero-clean-v2.png" alt="Хоть Кого" /></h1>
+            <h1 class="image-heading"><img class="title-image hero-title-image" src="assets/title-hero-colour-v3.png" alt="Хоть Кого" /></h1>
             <p class="hero-lead">Алко‑пиратский панк с тенью романса: духовые, баян, весёлый разгром и песня, которую хочется орать вместе.</p>
             <div class="hero-actions">
               <a class="button button-primary" href="https://vk.ru/hotkogo" target="_blank" rel="noopener noreferrer">Слушать и смотреть</a>
