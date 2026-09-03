@@ -99,11 +99,11 @@
         align-items: center;
         color: white;
       }
-      .brand-logo-link { display: inline-flex; align-items: center; }
+      .brand-logo-link { display: inline-flex; align-items: center; grid-column: 1; }
       .brand-logo { display: block; width: 300px; height: auto; }
-      .header-phone { display: block; min-width: 286px; width: 286px; padding: 0; }
+      .header-phone { display: block; grid-column: 3; min-width: 286px; width: 286px; padding: 0; }
       .header-phone img { display: block; width: 100%; height: auto; }
-      .main-nav { display: flex; gap: 36px; align-items: center; font-size: .9rem; }
+      .main-nav { display: flex; grid-column: 4; gap: 36px; align-items: center; font-size: .9rem; }
       .main-nav a { transition: color .2s ease; }
       .main-nav a:hover { color: var(--yellow); }
       .hero-grid { display: grid; grid-template-columns: 540px minmax(0, 1fr); gap: 50px; align-items: center; min-height: calc(100vh - 142px); }
