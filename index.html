@@ -28,6 +28,13 @@
         font-weight: 900;
         font-display: swap;
       }
+      @font-face {
+        font-family: "HK Bebas";
+        src: url("assets/bebas-neue-cyrillic.woff") format("woff");
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+      }
       :root {
         --ink: #121522;
         --paper: #fff7de;
@@ -40,6 +47,7 @@
         --mint: #75c898;
         --line: rgba(18, 21, 34, .18);
         --display-font: "HK Display", "Arial Narrow", sans-serif;
+        --bebas-font: "HK Bebas", "Arial Narrow", sans-serif;
       }
 
       * { box-sizing: border-box; }
@@ -53,7 +61,7 @@
       }
       a { color: inherit; text-decoration: none; }
       .shell { width: min(1680px, calc(100% - 48px)); margin: 0 auto; }
-      .eyebrow, .nav-link, .ticket-label, .stamp { font-weight: 900; text-transform: uppercase; letter-spacing: .08em; }
+      .eyebrow, .nav-link, .ticket-label, .stamp { font-family: var(--bebas-font); font-weight: 400; text-transform: uppercase; letter-spacing: .08em; }
 
       .hero {
         position: relative;
@@ -74,7 +82,7 @@
         pointer-events: none;
       }
       .hero-video { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; background: #111522; }
-      .hero-video iframe { position: absolute; top: 50%; left: 50%; width: 100vw; height: 56.25vw; min-width: 177.78vh; min-height: 100vh; border: 0; transform: translate(-50%, -50%); }
+      .hero-video iframe { position: absolute; top: 50%; left: 50%; width: 100%; height: 100%; min-width: 100%; min-height: 100%; border: 0; transform: translate(-50%, -50%); }
       .hero::after {
         content: "";
         position: absolute;
@@ -101,7 +109,8 @@
       }
       .brand-logo-link { display: inline-flex; align-items: center; }
       .brand-logo { display: block; width: min(270px, 32vw); height: auto; }
-      .header-phone { display: inline-flex; align-items: center; justify-content: center; min-width: 440px; height: 92px; padding: 0 24px; color: var(--red); background: var(--yellow); border: 2px solid rgba(18,21,34,.7); font-family: var(--display-font); font-weight: 400; font-size: 3.25rem; line-height: 1; letter-spacing: .02em; text-shadow: 4px 4px 0 var(--ink); white-space: nowrap; }
+      .header-phone { display: block; min-width: 440px; width: 440px; padding: 0; }
+      .header-phone img { display: block; width: 100%; height: auto; }
       .main-nav { display: flex; gap: 40px; align-items: center; font-size: 1rem; }
       .main-nav a { transition: color .2s ease; }
       .main-nav a:hover { color: var(--yellow); }
@@ -114,7 +123,7 @@
       .hero-title-image { width: clamp(460px, 42vw, 680px); margin: 0 0 28px; filter: drop-shadow(6px 7px 0 rgba(0,0,0,.46)); transform: rotate(-2deg); }
       .hero-lead { max-width: 630px; margin: 0; font-weight: 700; font-size: clamp(1.2rem, 1.45vw, 1.75rem); line-height: 1.45; }
       .hero-actions { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 36px; }
-      .button { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 0 22px; border: 2px solid var(--ink); border-radius: 8px; font-weight: 900; text-transform: uppercase; font-size: .86rem; letter-spacing: .04em; box-shadow: 4px 4px 0 var(--ink); transition: transform .18s ease, box-shadow .18s ease; }
+      .button { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 0 22px; border: 2px solid var(--ink); border-radius: 8px; font-family: var(--bebas-font); font-weight: 400; text-transform: uppercase; font-size: 1.14rem; letter-spacing: .045em; box-shadow: 4px 4px 0 var(--ink); transition: transform .18s ease, box-shadow .18s ease; }
       .hero .button { min-height: 68px; padding-inline: 30px; font-size: 1.1rem; }
       .button:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--ink); }
       .button-primary { background: var(--yellow); color: var(--ink); }
@@ -165,7 +174,7 @@
 
       .listen { padding: 108px 0; background: var(--blue); }
       .listen-grid { display: grid; grid-template-columns: 1fr .95fr; gap: 48px; align-items: center; }
-      .listen .section-title { color: var(--ink); }
+      .listen .section-title { color: var(--ink); font-family: var(--bebas-font); font-weight: 400; font-size: clamp(4.2rem, 6.6vw, 7.8rem); line-height: .82; letter-spacing: -.02em; }
       .listen-text { font-size: 1.2rem; line-height: 1.4; font-weight: 750; max-width: 520px; }
       .listen-card { position: relative; padding: 34px; min-height: 294px; background: var(--paper); border: 4px solid var(--ink); border-radius: 18px; box-shadow: 12px 12px 0 var(--ink); transform: rotate(2deg); }
       .listen-card::before { content: "♪"; position: absolute; top: -42px; right: 26px; color: var(--pink); font-family: Georgia, serif; font-size: 8rem; line-height: 1; transform: rotate(14deg); text-shadow: 3px 3px 0 var(--ink); }
@@ -180,7 +189,8 @@
       .booking-title-image { width: min(650px, 100%); margin-top: 13px; }
       .booking-lead { max-width: 790px; margin: 26px 0 0; font-size: clamp(1.25rem, 1.75vw, 2rem); line-height: 1.32; font-weight: 850; }
       .booking-contact { display: flex; align-items: center; flex-direction: column; gap: 44px; }
-      .booking-phone { display: inline-block; color: var(--red); font-family: var(--display-font); font-weight: 400; font-size: clamp(3.15rem, 4vw, 4rem); line-height: .95; letter-spacing: .025em; text-shadow: 4px 4px 0 var(--ink); white-space: nowrap; }
+      .booking-phone { display: block; width: min(610px, 100%); }
+      .booking-phone img { display: block; width: 100%; height: auto; }
       .booking .button { min-height: 88px; padding-inline: 48px; background: var(--ink); color: white; border-color: var(--ink); box-shadow: 6px 6px 0 white; white-space: nowrap; font-size: 1.4rem; }
       footer { padding: 64px 0; color: white; background: var(--ink); }
       .footer-row { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 32px; }
@@ -191,12 +201,14 @@
 
       @media (max-width: 800px) {
         .shell, .intro .shell, .booking .shell, .crew > .shell { width: min(100% - 28px, 620px); }
-        header { width: auto; height: 78px; margin-left: 0; display: flex; justify-content: space-between; }
-        .header-phone { display: none; }
+        header { width: auto; min-height: 150px; height: auto; margin-left: 0; display: grid; grid-template-columns: 1fr auto; grid-template-areas: "logo nav" "phone phone"; row-gap: 12px; }
+        .brand-logo-link { grid-area: logo; }
+        .main-nav { grid-area: nav; }
+        .header-phone { display: block; grid-area: phone; width: min(100%, 360px); min-width: 0; justify-self: center; }
         .main-nav { gap: 12px; font-size: .67rem; }
         .main-nav a:nth-child(2) { display: none; }
         .brand-logo { width: 174px; }
-        .hero { min-height: auto; }
+        .hero { min-height: 100svh; }
         .hero-grid, .intro-grid, .listen-grid, .booking-box, .crew-layout { grid-template-columns: 1fr; }
         .intro-grid { gap: 34px; }
         .crew-layout { gap: 32px; }
@@ -226,12 +238,13 @@
         .booking-title-image { width: min(440px, 100%); }
         .booking-contact { align-items: flex-start; gap: 26px; }
         .booking .button { min-height: 64px; padding-inline: 28px; justify-self: start; font-size: 1rem; }
-        .booking-phone { max-width: 100%; font-size: clamp(1.95rem, 9vw, 2.45rem); letter-spacing: 0; text-shadow: 2px 2px 0 var(--ink); white-space: nowrap; }
+        .booking-phone { width: min(100%, 490px); }
         .footer-row { grid-template-columns: 1fr; justify-items: start; gap: 22px; }
         .footer-row p { justify-self: start; white-space: normal; }
       }
       @media (max-width: 430px) {
         .main-nav { display: none; }
+        header { grid-template-columns: 1fr; grid-template-areas: "logo" "phone"; }
         .hero-title-image { width: 100%; max-width: 420px; }
         .hero-lead { font-size: 1rem; }
         .button { min-height: 47px; padding: 0 15px; font-size: .73rem; }
@@ -250,7 +263,7 @@
       <div class="shell">
         <header>
           <a class="brand-logo-link" href="#top" aria-label="Хоть Кого — наверх"><img class="brand-logo" src="assets/logo-hk-04.png" alt="Ансамбль «Хоть Кого»" /></a>
-          <a class="header-phone" href="tel:+79254416722" aria-label="Позвонить: +7 925 44 167 22">+7 925 44 167 22</a>
+          <a class="header-phone" href="tel:+79254416722" aria-label="Позвонить: +7 925 44 167 22"><img src="assets/header-phone-reference.png" alt="+7 925 44 167 22" /></a>
           <nav class="main-nav" aria-label="Разделы сайта">
             <a class="nav-link" href="#crew">Команда</a>
             <a class="nav-link" href="#listen">Музыка</a>
@@ -335,7 +348,7 @@
               <p class="booking-lead">Концерт, фестиваль, праздник или повод устроить достойный шум — напишите нам во ВКонтакте.</p>
             </div>
             <div class="booking-contact">
-              <a class="booking-phone" href="tel:+79254416722" aria-label="Позвонить: +7 925 44 167 22">+7 925 44 167 22</a>
+              <a class="booking-phone" href="tel:+79254416722" aria-label="Позвонить: +7 925 44 167 22"><img src="assets/booking-phone-reference.png" alt="+7 925 44 167 22" /></a>
               <a class="button" href="https://vk.ru/hotkogo" target="_blank" rel="noopener noreferrer">Написать группе</a>
             </div>
           </div>
@@ -350,5 +363,26 @@
         <p>© 2011 — 2026. Ансамбль «Хоть Кого» · <a class="footer-vk" href="https://vk.ru/hotkogo" target="_blank" rel="noopener noreferrer">ВКонтакте</a></p>
       </div>
     </footer>
+    <script>
+      (() => {
+        const stage = document.querySelector('.hero-video');
+        const frame = stage?.querySelector('iframe');
+        if (!stage || !frame) return;
+        const fitVideo = () => {
+          const width = stage.clientWidth;
+          const height = stage.clientHeight;
+          const ratio = 16 / 9;
+          if (width / height > ratio) {
+            frame.style.width = `${width}px`;
+            frame.style.height = `${width / ratio}px`;
+          } else {
+            frame.style.width = `${height * ratio}px`;
+            frame.style.height = `${height}px`;
+          }
+        };
+        new ResizeObserver(fitVideo).observe(stage);
+        fitVideo();
+      })();
+    </script>
   </body>
 </html>
