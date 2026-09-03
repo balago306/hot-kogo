@@ -9,7 +9,7 @@
     <style>
       @font-face {
         font-family: "HK Display";
-        src: url("assets/anton.ttf") format("truetype");
+        src: url("assets/russo-one.ttf") format("truetype");
         font-style: normal;
         font-weight: 400;
         font-display: swap;
@@ -66,19 +66,19 @@
         content: "";
         position: absolute;
         inset: 0;
-        z-index: -1;
+        z-index: 1;
         opacity: 1;
         background-image:
           linear-gradient(125deg, rgba(17,21,34,.92) 0 43%, rgba(17,21,34,.61) 59%, rgba(237,61,136,.43) 100%),
           repeating-linear-gradient(135deg, transparent 0 22px, rgba(255,255,255,.10) 22px 24px, transparent 24px 46px);
         pointer-events: none;
       }
-      .hero-video { position: absolute; inset: 0; z-index: -2; overflow: hidden; pointer-events: none; background: #111522; }
+      .hero-video { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; background: #111522; }
       .hero-video iframe { position: absolute; top: 50%; left: 50%; width: 100vw; height: 56.25vw; min-width: 177.78vh; min-height: 100vh; border: 0; transform: translate(-50%, -50%); }
       .hero::after {
         content: "";
         position: absolute;
-        z-index: -1;
+        z-index: 1;
         width: 85vw;
         height: 85vw;
         max-width: 1130px;
@@ -88,6 +88,7 @@
         background: var(--mint);
         border-radius: 50%;
       }
+      .hero > .shell { position: relative; z-index: 2; }
       header {
         width: calc(100% + 140px);
         margin-left: -36px;
