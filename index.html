@@ -109,9 +109,9 @@
       .hero-copy { position: relative; z-index: 3; color: white; padding: 0; transform: translateY(-24px); }
       .eyebrow { display: inline-flex; align-items: center; gap: 8px; color: var(--yellow); font-size: .74rem; }
       .eyebrow::before { content: "✦"; font-size: 1rem; }
-      h1 { max-width: 740px; margin: 0 0 28px; font-family: var(--display-font); font-weight: 400; font-size: clamp(7rem, 9.4vw, 12rem); line-height: .83; letter-spacing: -.055em; text-transform: uppercase; transform: rotate(-2deg); text-shadow: 5px 5px 0 rgba(0,0,0,.42); }
-      h1 .line-one { display: block; color: var(--yellow); }
-      h1 .line-two { display: block; color: var(--pink); margin-left: .23em; }
+      .image-heading { margin: 0; }
+      .title-image { display: block; height: auto; max-width: 100%; }
+      .hero-title-image { width: clamp(460px, 42vw, 680px); margin: 0 0 28px; filter: drop-shadow(6px 7px 0 rgba(0,0,0,.46)); transform: rotate(-2deg); }
       .hero-lead { max-width: 630px; margin: 0; font-weight: 700; font-size: clamp(1.2rem, 1.45vw, 1.75rem); line-height: 1.45; }
       .hero-actions { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 36px; }
       .button { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 0 22px; border: 2px solid var(--ink); border-radius: 8px; font-weight: 900; text-transform: uppercase; font-size: .86rem; letter-spacing: .04em; box-shadow: 4px 4px 0 var(--ink); transition: transform .18s ease, box-shadow .18s ease; }
@@ -136,6 +136,7 @@
       .intro-grid { display: grid; grid-template-columns: 600px minmax(0, 1fr); gap: 178px; align-items: start; }
       .section-title { margin: 13px 0 0; font-family: var(--display-font); font-weight: 400; font-size: clamp(3rem, 6vw, 6.6rem); line-height: .86; letter-spacing: -.03em; text-transform: uppercase; }
       .intro .section-title { color: var(--red); font-size: clamp(5.6rem, 7.8vw, 10rem); line-height: .86; }
+      .intro-title-image { width: min(520px, 100%); margin-top: 13px; }
       .intro-copy { max-width: 976px; font-size: clamp(1.2rem, 1.46vw, 1.875rem); line-height: 1.46; font-weight: 750; }
       .intro-copy p { margin: 0; }
       .intro-copy p + p { margin-top: 24px; }
@@ -156,6 +157,7 @@
       .crew .eyebrow { font-size: 1rem; }
       .crew .eyebrow::before { font-size: 1.2rem; }
       .crew .section-title { color: var(--yellow); max-width: 650px; font-size: clamp(5.2rem, 5.8vw, 7.4rem); line-height: .86; }
+      .crew-title-image { width: min(630px, 100%); margin-top: 13px; filter: drop-shadow(5px 5px 0 rgba(0,0,0,.32)); }
       .crew-note { max-width: 600px; margin: 142px 0 0 12px; font-weight: 750; font-size: clamp(1.25rem, 1.45vw, 1.85rem); line-height: 1.48; }
       .crew-photo { position: relative; height: 720px; margin: 0; border: 4px solid var(--paper); border-radius: 20px; overflow: hidden; box-shadow: 12px 12px 0 var(--red); }
       .crew-photo img { display: block; width: 100%; height: 720px; object-fit: cover; object-position: center 36%; }
@@ -175,6 +177,7 @@
       .booking .shell { width: min(1528px, calc(100% - 48px)); }
       .booking-box { display: grid; grid-template-columns: 720px minmax(0, 1fr); gap: 130px; align-items: center; height: 640px; padding: 105px 84px; border: 6px solid var(--ink); background: var(--yellow); box-shadow: 18px 18px 0 var(--ink); }
       .booking .section-title { color: var(--ink); font-size: clamp(4.7rem, 6.1vw, 7.2rem); line-height: .82; }
+      .booking-title-image { width: min(650px, 100%); margin-top: 13px; }
       .booking-lead { max-width: 790px; margin: 26px 0 0; font-size: clamp(1.25rem, 1.75vw, 2rem); line-height: 1.32; font-weight: 850; }
       .booking-contact { display: flex; align-items: center; flex-direction: column; gap: 44px; }
       .booking-phone { display: inline-block; color: var(--red); font-family: var(--display-font); font-weight: 400; font-size: clamp(3.15rem, 4vw, 4rem); line-height: .95; letter-spacing: .025em; text-shadow: 4px 4px 0 var(--ink); white-space: nowrap; }
@@ -199,7 +202,7 @@
         .crew-layout { gap: 32px; }
         .hero-grid { min-height: auto; }
         .hero-copy { padding: 35px 0 18px; transform: none; }
-        h1 { font-size: clamp(5.2rem, 24vw, 8rem); }
+        .hero-title-image { width: min(520px, 100%); margin-bottom: 28px; }
         .hero .button { min-height: 50px; padding-inline: 22px; font-size: .86rem; }
         .hero-visual { height: 390px; width: calc(100% + 28px); margin-left: -14px; }
         .photo-frame { width: 94%; height: 355px; right: 3%; bottom: 5px; border-width: 6px; box-shadow: 8px 8px 0 var(--yellow); }
@@ -208,19 +211,19 @@
         .sticker-one { top: 0; left: 4%; }
         .sticker-two { right: 3%; bottom: 0; }
         .intro, .crew, .listen { padding: 72px 0; }
-        .intro .section-title { font-size: clamp(4rem, 20vw, 6rem); line-height: .86; }
+        .intro-title-image { width: min(440px, 100%); }
         .noise-list { grid-template-columns: repeat(3, 1fr); gap: 6px; }
         .noise-card { padding: 10px; min-height: 95px; font-size: .67rem; }
         .noise-card b { font-size: 1.15rem; }
         .crew-heading { padding-top: 0; }
-        .crew .section-title { font-size: clamp(3.45rem, 15.5vw, 5rem); }
+        .crew-title-image { width: min(430px, 100%); }
         .crew-note { margin: 22px 0 0; }
         .crew-photo { width: 100%; height: 380px; margin: 35px 0 0; box-shadow: 8px 8px 0 var(--red); }
         .crew-photo img { height: 380px; object-position: 51% 43%; }
         .listen-card { margin: 13px 8px 0 0; box-shadow: 8px 8px 0 var(--ink); }
         .booking { padding: 74px 0; }
         .booking-box { height: auto; min-height: auto; padding: 38px 24px; gap: 34px; overflow: hidden; box-shadow: 8px 8px 0 var(--ink); }
-        .booking .section-title { font-size: clamp(3.2rem, 15.5vw, 4.6rem); }
+        .booking-title-image { width: min(440px, 100%); }
         .booking-contact { align-items: flex-start; gap: 26px; }
         .booking .button { min-height: 64px; padding-inline: 28px; justify-self: start; font-size: 1rem; }
         .booking-phone { max-width: 100%; font-size: clamp(1.95rem, 9vw, 2.45rem); letter-spacing: 0; text-shadow: 2px 2px 0 var(--ink); white-space: nowrap; }
@@ -229,7 +232,7 @@
       }
       @media (max-width: 430px) {
         .main-nav { display: none; }
-        h1 { font-size: 5rem; }
+        .hero-title-image { width: 100%; max-width: 420px; }
         .hero-lead { font-size: 1rem; }
         .button { min-height: 47px; padding: 0 15px; font-size: .73rem; }
         .noise-list { grid-template-columns: 1fr; max-width: 240px; }
@@ -256,7 +259,7 @@
         </header>
         <div class="hero-grid">
           <div class="hero-copy">
-            <h1><span class="line-one">Хоть</span><span class="line-two">кого</span></h1>
+            <h1 class="image-heading"><img class="title-image hero-title-image" src="assets/title-hero-reference.png" alt="Хоть Кого" /></h1>
             <p class="hero-lead">Алко‑пиратский панк с тенью романса: духовые, баян, весёлый разгром и песня, которую хочется орать вместе.</p>
             <div class="hero-actions">
               <a class="button button-primary" href="https://vk.ru/hotkogo" target="_blank" rel="noopener noreferrer">Слушать и смотреть</a>
@@ -279,7 +282,7 @@
         <div class="shell intro-grid">
           <div>
             <div class="eyebrow" style="color: var(--red)">Наша карта</div>
-            <h2 class="section-title">Громче<br />чем<br />шторм</h2>
+            <h2 class="image-heading"><img class="title-image intro-title-image" src="assets/title-intro-reference.png" alt="Громче чем шторм" /></h2>
           </div>
           <div class="intro-copy">
             <p>«Хоть Кого» — это когда <em>капитан Эдя</em> приходит в гости к пиратской таверне, а дядя Роззи достаёт инструмент.</p>
@@ -299,7 +302,7 @@
             <div class="crew-heading">
             <div>
               <div class="eyebrow">Экипаж в полном составе</div>
-              <h2 class="section-title">КТО ЗДЕСЬ<br />ЗАВОДИТ?</h2>
+              <h2 class="image-heading"><img class="title-image crew-title-image" src="assets/title-crew-reference.png" alt="Кто здесь заводит?" /></h2>
             </div>
             <p class="crew-note">Люди с инструментами, шляпами, хорошими лицами и весьма серьёзным отношением к веселью.</p>
             </div>
@@ -328,7 +331,7 @@
           <div class="booking-box">
             <div class="booking-copy">
               <div class="eyebrow" style="color: var(--red)">Для организаторов, друзей и смельчаков</div>
-              <h2 class="section-title">ПОЗОВИТЕ<br />ХОТЬ КОГО</h2>
+              <h2 class="image-heading"><img class="title-image booking-title-image" src="assets/title-booking-reference.png" alt="Позовите Хоть Кого" /></h2>
               <p class="booking-lead">Концерт, фестиваль, праздник или повод устроить достойный шум — напишите нам во ВКонтакте.</p>
             </div>
             <div class="booking-contact">
